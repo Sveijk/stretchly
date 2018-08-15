@@ -13,6 +13,8 @@ module.exports = {
   breakStrictMode: false,
   mainColor: '#478484',
   audio: 'crystal-glass',
+  customBackground: false,
+  backgroundImage: 'nature',
   fullscreen: false,
   ideas: true,
   naturalBreaks: true,

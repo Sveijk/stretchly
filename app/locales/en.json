@@ -82,7 +82,10 @@
     "graphiteCrystal": "graphite <br/>crystal",
     "coffeeKisses": "coffee <br/> kisses",
     "morningSwim": "morning <br/> swim",
-    "resetToDefaults": "reset to defaults"
+    "resetToDefaults": "reset to defaults",
+    "wallpaperCustom": "wallpaper theme",
+    "natureBackground": "nature",
+    "customBackground": "custom"
   },
   "settings3": {
     "settings": "Settings",

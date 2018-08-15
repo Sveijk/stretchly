@@ -22,12 +22,24 @@
        url('./fonts/Lato-Light.svg#latolight') format('svg');
 }
 
+html, body {
+  min-height: 100%;
+}
+
 body {
   color: #fff;
+  background-size: cover;
   font-family: 'Lato Hairline';
-  font-size: 28px;
+  font-size: 25px;
   text-align: center;
   user-select: none;
+}
+
+.breaks {
+  background-image: url('https://source.unsplash.com/random/featured/?nature') !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
 }
 
 .microbreak,
@@ -46,6 +58,10 @@ body {
 
 .color-scheme {
   padding-top: 20px;
+}
+
+.break-wallpaper {
+  padding-top: 5px;
 }
 
 .scheme,
@@ -187,3 +203,5 @@ select  {
 #tutorial {
   font-size: 1.6rem;
 }
+
+.

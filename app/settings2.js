@@ -12,7 +12,7 @@ document.addEventListener('drop', event => event.preventDefault())
 
 ipcRenderer.on('renderSettings', (event, data) => {
   let colorElements = document.getElementsByClassName('color')
-  for (var i = 0; i < colorElements.length; i++) {
+  for (let i = 0; i < colorElements.length; i++) {
     let element = colorElements[i]
     let color = element.dataset.color
     element.style.background = color
@@ -24,9 +24,8 @@ ipcRenderer.on('renderSettings', (event, data) => {
     }
     document.body.style.background = data['mainColor']
   }
-
   let audioElements = document.getElementsByClassName('audio')
-  for (var y = 0; y < audioElements.length; y++) {
+  for (let y = 0; y < audioElements.length; y++) {
     let audioElement = audioElements[y]
     let audio = audioElement.dataset.audio
     if (audio === data['audio']) {
@@ -40,11 +39,24 @@ ipcRenderer.on('renderSettings', (event, data) => {
         ipcRenderer.send('save-setting', 'audio', audio)
       })
     }
+    let backgroundElements = document.getElementsByClassName('wallpaper')
+    for (let j = 0; j < backgroundElements.length; j++) {
+      let element = backgroundElements[j]
+      let backgroundImage = element.dataset.backgroundImage
+      element.style.background = backgroundImage
+      if (!eventsAttached) {
+        element.addEventListener('click', function (e) {
+          ipcRenderer.send('save-setting', 'customBackground', backgroundImage)
+          document.body.style.background = backgroundImage
+        })
+      }
+      document.body.style.background = data['customBackground']
+    }
   }
 
   eventsAttached = true
 })
 
 document.getElementById('defaults').addEventListener('click', function (e) {
-  ipcRenderer.send('set-default-settings', ['audio', 'mainColor'])
+  ipcRenderer.send('set-default-settings', ['audio', 'mainColor', 'customBackground'])
 })

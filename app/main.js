@@ -2,7 +2,6 @@
 const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
-const getDoNotDisturb = require('@meetfranz/electron-notification-state')
 
 startI18next()
 
@@ -218,27 +217,13 @@ function checkVersion () {
 }
 
 function startMicrobreakNotification () {
-  const notificationDisabled = getDoNotDisturb.getDoNotDisturb()
-  if (!notificationDisabled) {
-    processWin.webContents.send('showNotification', i18next.t('main.microbreakIn', {seconds: settings.get('microbreakNotificationInterval') / 1000}))
-    breakPlanner.nextBreakAfterNotification('startMicrobreak')
-  } else {
-    setTimeout(function () {
-      startMicrobreakNotification()
-    }, settings.get('microbreakNotificationInterval'))
-  }
+  processWin.webContents.send('showNotification', i18next.t('main.microbreakIn', {seconds: settings.get('microbreakNotificationInterval') / 1000}))
+  breakPlanner.nextBreakAfterNotification('startMicrobreak')
 }
 
 function startBreakNotification () {
-  const notificationDisabled = getDoNotDisturb.getDoNotDisturb()
-  if (!notificationDisabled) {
-    processWin.webContents.send('showNotification', i18next.t('main.breakIn', {seconds: settings.get('breakNotificationInterval') / 1000}))
-    breakPlanner.nextBreakAfterNotification('startBreak')
-  } else {
-    setTimeout(function () {
-      startMicrobreakNotification()
-    }, settings.get('breakNotificationInterval'))
-  }
+  processWin.webContents.send('showNotification', i18next.t('main.breakIn', {seconds: settings.get('breakNotificationInterval') / 1000}))
+  breakPlanner.nextBreakAfterNotification('startBreak')
 }
 
 function startMicrobreak () {
@@ -275,6 +260,7 @@ function startMicrobreak () {
       frame: false,
       show: false,
       backgroundColor: settings.get('mainColor'),
+      backgroundImage: settings.get('backgroundTheme'),
       skipTaskbar: true,
       focusable: false,
       title: 'stretchly'
@@ -335,6 +321,7 @@ function startBreak () {
       frame: false,
       show: false,
       backgroundColor: settings.get('mainColor'),
+      backgroundImage: settings.get('backgroundTheme'),
       skipTaskbar: true,
       focusable: false,
       title: 'stretchly'
