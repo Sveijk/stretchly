@@ -46,11 +46,11 @@ ipcRenderer.on('renderSettings', (event, data) => {
       element.style.background = backgroundImage
       if (!eventsAttached) {
         element.addEventListener('click', function (e) {
-          ipcRenderer.send('save-setting', 'customBackground', backgroundImage)
+          ipcRenderer.send('save-setting', 'backgroundTheme', backgroundImage)
           document.body.style.background = backgroundImage
         })
       }
-      document.body.style.background = data['customBackground']
+      document.body.style.background = data['backgroundTheme']
     }
   }
 
@@ -58,5 +58,5 @@ ipcRenderer.on('renderSettings', (event, data) => {
 })
 
 document.getElementById('defaults').addEventListener('click', function (e) {
-  ipcRenderer.send('set-default-settings', ['audio', 'mainColor', 'customBackground'])
+  ipcRenderer.send('set-default-settings', ['audio', 'mainColor', 'backgroundTheme'])
 })

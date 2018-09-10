@@ -13,6 +13,13 @@ document.getElementById('close').addEventListener('click', function (e) {
   ipcRenderer.send('finish-break', false)
 })
 
+ipcRenderer.on('breaks', (event) => {
+  if (true) {
+    let customBackground = document.getElementsByClassName("breaks")
+    customBackground.style.backgroundImage = "url('https://source.unsplash.com/random/featured/?nature') !important;"
+  }
+})
+
 ipcRenderer.on('breakIdea', (event, message, strictMode) => {
   if (!strictMode) {
     document.getElementById('close').style.visibility = 'visible'

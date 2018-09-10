@@ -283,6 +283,7 @@ function startMicrobreak () {
   }
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
+    const customBackground = settings.get('backgroundImage')
     let microbreakWinLocal = new BrowserWindow({
       icon: `${__dirname}/images/stretchly_18x18.png`,
       x: displaysX(displayIdx),
@@ -290,7 +291,7 @@ function startMicrobreak () {
       frame: false,
       show: false,
       backgroundColor: settings.get('mainColor'),
-      backgroundImage: settings.get('backgroundTheme'),
+      backgroundImage: customBackground ? settings.get('backgroundTheme') : settings.get('mainColor'),
       skipTaskbar: true,
       focusable: false,
       title: 'stretchly'
