@@ -15,7 +15,7 @@ module.exports = {
   mainColor: '#478484',
   audio: 'crystal-glass',
   backgroundImage: true,
-  backgroundTheme: "url('https://source.unsplash.com/random/featured/?nature') !important;",
+  backgroundTheme: `url('https://source.unsplash.com/random/featured/?nature') !important;`,
   fullscreen: false,
   ideas: true,
   naturalBreaks: true,

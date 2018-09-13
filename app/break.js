@@ -15,10 +15,10 @@ document.getElementById('close').addEventListener('click', function (e) {
 
 ipcRenderer.on('breaks', (event) => {
   if (true) {
-    let customBackground = document.getElementsByClassName('breaks')
-    customBackground.style.backgroundImage = "url('https://source.unsplash.com/random/featured/?nature') !important;"
+    let customBackground = document.getElementsByClassName("breaks")
+    customBackground.setAttribute("background-image", "url('https://source.unsplash.com/random/featured/?nature') !important;")
   }
-  console.log("after if", customBackground.style.backgroundImage)
+  console.log("after if", customBackground)
 })
 
 ipcRenderer.on('breakIdea', (event, message, strictMode) => {
