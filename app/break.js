@@ -13,13 +13,13 @@ document.getElementById('close').addEventListener('click', function (e) {
   ipcRenderer.send('finish-break', false)
 })
 
-ipcRenderer.on('breaks', (event) => {
-  if (true) {
-    let customBackground = document.getElementsByClassName("breaks")
-    customBackground.setAttribute("background-image", "url('https://source.unsplash.com/random/featured/?nature') !important;")
-  }
-  console.log("after if", customBackground)
-})
+// ipcRenderer.on('breaks', (event) => {
+//   if (true) {
+//     let customBackground = document.getElementsByClassName("breaks")
+//     customBackground.setAttribute("background-image", "url('https://source.unsplash.com/random/featured/?nature') !important;")
+//   }
+//   console.log("after if", customBackground)
+// })
 
 ipcRenderer.on('breakIdea', (event, message, strictMode) => {
   if (!strictMode) {

@@ -16,7 +16,6 @@ const { UntilMorning } = require('./utils/untilMorning')
 let microbreakIdeas
 let breakIdeas
 let breakPlanner
-let customBackground
 let appIcon = null
 let processWin = null
 let microbreakWins = null
@@ -283,11 +282,16 @@ function startMicrobreak () {
     idea = microbreakIdeas.randomElement
   }
 
-  let backgroundTheme = null
-  if (settings.get('backgroundImage')) {
-    backgroundTheme = customBackground
-  }
+  // let backgroundTheme = null
+  // if (settings.get('backgroundImage')) {
+  //   backgroundTheme = 
+  // }
 
+  // const backgroundImage = null
+  // if (settings.get('backgroundImage')) {
+  //   backgroundImage === true
+  // }
+  
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     // const customBackground = settings.get('backgroundImage')
     let microbreakWinLocal = new BrowserWindow({
@@ -297,7 +301,7 @@ function startMicrobreak () {
       frame: false,
       show: false,
       backgroundColor: settings.get('mainColor'),
-      // backgroundColor: customBackground ? settings.get('backgroundTheme') : settings.get('mainColor'),
+      // backgroundColor: customBackground ? domElement : settings.get('mainColor'),
       skipTaskbar: true,
       focusable: false,
       title: 'stretchly'
@@ -305,11 +309,11 @@ function startMicrobreak () {
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
       microbreakWinLocal.show()
+      microbreakWinLocal.webContents.send('customBackground', backgroundTheme, settings.get('backgroundImage'))
       microbreakWinLocal.setFullScreen(settings.get('fullscreen'))
       if (displayIdx === 0) {
         breakPlanner.emit('microbreakStarted', true)
       }
-      microbreakWinLocal.webContents.send('customBackground', backgroundTheme, settings.get('backgroundImage'))
       microbreakWinLocal.webContents.send('microbreakIdea', idea, settings.get('microbreakStrictMode'))
       microbreakWinLocal.webContents.send('progress', Date.now(), settings.get('microbreakDuration'))
       microbreakWinLocal.setAlwaysOnTop(true)
@@ -358,8 +362,7 @@ function startBreak () {
       y: displaysY(displayIdx),
       frame: false,
       show: false,
-      // backgroundColor: settings.get('mainColor'),
-      backgroundImage: settings.get('backgroundTheme'),
+      backgroundColor: settings.get('mainColor'),
       skipTaskbar: true,
       focusable: false,
       title: 'stretchly'

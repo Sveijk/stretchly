@@ -2,6 +2,9 @@ const {ipcRenderer, remote} = require('electron')
 const Utils = remote.require('./utils/utils')
 const HtmlTranslate = require('./utils/htmlTranslate')
 
+// document.getElementsByClassName("breaks").style["background-image"] = "url('https://source.unsplash.com/random/featured/?nature') !important;"
+
+
 document.addEventListener('DOMContentLoaded', event => {
   new HtmlTranslate(document).translate()
 })
@@ -11,6 +14,15 @@ document.addEventListener('drop', event => event.preventDefault())
 
 document.getElementById('close').addEventListener('click', function (e) {
   ipcRenderer.send('finish-microbreak', false)
+})
+
+ipcRenderer.on('customBackground', (backgroundImage) => {
+  if (!backgroundImage) {
+    let background = document.getElementsByTagName('body')
+    background.style("background-image") = "none"
+  }
+
+  document.body.style('background-image') = data['backgroundTheme']
 })
 
 ipcRenderer.on('microbreakIdea', (event, message, strictMode) => {

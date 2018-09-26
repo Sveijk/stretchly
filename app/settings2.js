@@ -39,21 +39,19 @@ ipcRenderer.on('renderSettings', (event, data) => {
         ipcRenderer.send('save-setting', 'audio', audio)
       })
     }
-    let backgroundElements = document.getElementsByClassName('wallpaper')
-    for (let j = 0; j < backgroundElements.length; j++) {
-      let element = backgroundElements[j]
-      let backgroundImage = element.dataset.backgroundImage
-      element.style.background = backgroundImage
-      if (!eventsAttached) {
-        element.addEventListener('click', function (e) {
-          ipcRenderer.send('save-setting', 'backgroundTheme', backgroundImage)
-          document.body.style.background = backgroundImage
-        })
-      }
-      document.body.style.background = data['backgroundTheme']
-    }
   }
-
+  let backgroundElements = document.getElementsByClassName('wallpaper')
+    let element = backgroundElements
+    let backgroundTheme = element.dataset.backgroundImage
+    element.style.backgroundImage = backgroundTheme
+    if (!eventsAttached) {
+      element.addEventListener('click', function (e) {
+        ipcRenderer.send('save-setting', 'backgroundTheme', backgroundTheme)
+        document.body.style.backgroundImage = backgroundTheme
+      })
+      document.body.style.backgroundImage = data['backgroundTheme']
+    }
+  
   eventsAttached = true
 })
 
