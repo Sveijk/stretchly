@@ -281,19 +281,8 @@ function startMicrobreak () {
   if (settings.get('ideas')) {
     idea = microbreakIdeas.randomElement
   }
-
-  // let backgroundTheme = null
-  // if (settings.get('backgroundImage')) {
-  //   backgroundTheme = 
-  // }
-
-  // const backgroundImage = null
-  // if (settings.get('backgroundImage')) {
-  //   backgroundImage === true
-  // }
   
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
-    // const customBackground = settings.get('backgroundImage')
     let microbreakWinLocal = new BrowserWindow({
       icon: `${__dirname}/images/stretchly_18x18.png`,
       x: displaysX(displayIdx),
@@ -309,7 +298,7 @@ function startMicrobreak () {
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
       microbreakWinLocal.show()
-      microbreakWinLocal.webContents.send('customBackground', backgroundTheme, settings.get('backgroundImage'))
+      microbreakWinLocal.webContents.send('customBackground', settings.get('backgroundImage'))
       microbreakWinLocal.setFullScreen(settings.get('fullscreen'))
       if (displayIdx === 0) {
         breakPlanner.emit('microbreakStarted', true)

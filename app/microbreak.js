@@ -17,12 +17,10 @@ document.getElementById('close').addEventListener('click', function (e) {
 })
 
 ipcRenderer.on('customBackground', (backgroundImage) => {
-  if (!backgroundImage) {
+  if (backgroundImage) {
     let background = document.getElementsByTagName('body')
-    background.style("background-image") = "none"
+    background.style('background-image') = `url('https://source.unsplash.com/random/featured/?nature') !important`
   }
-
-  document.body.style('background-image') = data['backgroundTheme']
 })
 
 ipcRenderer.on('microbreakIdea', (event, message, strictMode) => {
