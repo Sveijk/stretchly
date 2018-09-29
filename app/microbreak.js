@@ -16,7 +16,7 @@ document.getElementById('close').addEventListener('click', function (e) {
   ipcRenderer.send('finish-microbreak', false)
 })
 
-ipcRenderer.on('customBackground', (backgroundImage) => {
+ipcRenderer.on('customBackground', (event, backgroundImage) => {
   if (backgroundImage) {
     let background = document.getElementsByTagName('body')
     background.style('background-image') = `url('https://source.unsplash.com/random/featured/?nature') !important`
