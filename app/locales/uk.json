@@ -1,8 +1,12 @@
 {
   "main": {
     "toolTipHeader": "stretchly - нагадування про перервах",
-    "microbreakIn": "Мікроперерва через {{seconds}} с ...",
-    "breakIn": "Перерва через {{seconds}} с ...",
+    "microbreakIn": "Мікроперерва через {{seconds}} с …",
+    "breakIn": "Перерва через {{seconds}} с …",
+    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
+    "breakReference": "break",
+    "microbreakReference": "microbreak",
+    "resumingAt": "Resuming breaks at {{hours}}:{{minutes}}",
     "resumingBreaks": "Роботу відновлено",
     "aboutStretchly": "Про програму stretchly v {{version}}",
     "downloadLatestVersion": "Завантажити останню версію",
@@ -39,11 +43,11 @@
     "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
-    "keepGoing": "... ні, я просто продовжу",
+    "keepGoing": "… ні, я просто продовжу",
     "title": "Перерва!"
   },
   "microbreak": {
-    "keepGoing": "... ні, я просто продовжу",
+    "keepGoing": "… ні, я просто продовжу",
     "title": "Перерва!"
   },
   "about": {
@@ -54,7 +58,7 @@
     "orRead": "or read its",
     "tutorial": "tutorial",
     "latestVersion": "остання версія:",
-    "checking": "перевіряємо ..."
+    "checking": "перевіряємо …"
   },
   "settings": {
     "settings": "Налаштування",
@@ -97,6 +101,7 @@
     "notifyBeforeMicrobreakStarts": "повідомляти перед початком мікроперерви",
     "monitorIdleTime": "вважати бездіяльність за природну перерву",
     "showOnAllScreens": "відображати на всіх екранах",
+    "silentNotifications": "silent notifications",
     "useMonochromeTrayIcon": "use monochrome tray icon",
     "language": "мова",
     "resetToDefaults": "налаштування за умовчанням"

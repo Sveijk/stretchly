@@ -1,8 +1,12 @@
 {
   "main": {
     "toolTipHeader": "stretchly - Pausenzeit Erinnerungs App",
-    "microbreakIn": "Mikropause in {{seconds}} Sekunden...",
-    "breakIn": "Pause in {{seconds}} Sekunden...",
+    "microbreakIn": "Mikropause in {{seconds}} Sekunden…",
+    "breakIn": "Pause in {{seconds}} Sekunden…",
+    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
+    "breakReference": "break",
+    "microbreakReference": "microbreak",
+    "resumingAt": "Resuming breaks at {{hours}}:{{minutes}}",
     "resumingBreaks": "Pausen fortsetzen",
     "aboutStretchly": "Über stretchly v{{version}}",
     "downloadLatestVersion": "Neuste Version herunterladen",
@@ -38,11 +42,11 @@
     "notificationStatus": "\nIm nicht stören Modus"
   },
   "break": {
-    "keepGoing": "... nein, ich werde weitermachen",
+    "keepGoing": "… nein, ich werde weitermachen",
     "title": "Zeit für eine Pause!"
   },
   "microbreak": {
-    "keepGoing": "... nein, ich werde weitermachen",
+    "keepGoing": "… nein, ich werde weitermachen",
     "title": "Zeit für eine Pause!"
   },
   "about": {
@@ -53,7 +57,7 @@
     "orRead": "or read its",
     "tutorial": "tutorial",
     "latestVersion": "die neuste Version:",
-    "checking": "prüfe..."
+    "checking": "prüfe…"
   },
   "settings": {
     "settings": "Einstellungen",
@@ -96,6 +100,7 @@
     "notifyBeforeMicrobreakStarts": "Benachrichtigen, bevor die Mikropause beginnt",
     "monitorIdleTime": "System-Leerlaufzeit für natürliche Pausen überwachen",
     "showOnAllScreens": "breaks are shown on all monitors",
+    "silentNotifications": "silent notifications",
     "useMonochromeTrayIcon": "Verwenden das einfarbige Tray-icon",
     "language": "Sprache",
     "resetToDefaults": "Auf Standardeinstellung zurücksetzen"

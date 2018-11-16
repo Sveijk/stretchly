@@ -1,4 +1,4 @@
-# stretchly [![Build Status](https://travis-ci.org/hovancik/stretchly.svg?branch=master)](https://travis-ci.org/hovancik/stretchly) [![Build status](https://ci.appveyor.com/api/projects/status/d3eq9bs1kcysulb1?svg=true)](https://ci.appveyor.com/project/hovancik/stretchly) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) [![codecov](https://codecov.io/gh/hovancik/stretchly/branch/master/graph/badge.svg)](https://codecov.io/gh/hovancik/stretchly) [![Join the chat at https://gitter.im/stretchly/Lobby](https://badges.gitter.im/stretchly/Lobby.svg)](https://gitter.im/stretchly/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# stretchly [![Humane Tech](https://raw.githubusercontent.com/engagingspaces/awesome-humane-tech/master/humane-tech-badge.svg?sanitize=true)](https://github.com/engagingspaces/awesome-humane-tech) [![Build Status](https://travis-ci.org/hovancik/stretchly.svg?branch=master)](https://travis-ci.org/hovancik/stretchly) [![Build status](https://ci.appveyor.com/api/projects/status/d3eq9bs1kcysulb1?svg=true)](https://ci.appveyor.com/project/hovancik/stretchly) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) [![codecov](https://codecov.io/gh/hovancik/stretchly/branch/master/graph/badge.svg)](https://codecov.io/gh/hovancik/stretchly) [![Join the chat at https://gitter.im/stretchly/Lobby](https://badges.gitter.im/stretchly/Lobby.svg)](https://gitter.im/stretchly/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly_128x128.png" align="right">
@@ -24,7 +24,7 @@ The user gets notified 30 seconds before each break to be able to prepare to pau
 You can close the break or microbreak window early by clicking the link at the bottom
 or by using `Ctrl/Cmd + x` keyboard shortcut (when not in strict mode).
 
-You can pause/resume *stretchly*'s break reminders. On Windows and macOS, you can set the app to start at login.
+You can pause/resume *stretchly*'s break reminders. On Windows and macOS, you can set the app to start at login. Also, Do Not Disturb mode is respected on those platforms.
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-tray-1.png" height="150">
 
@@ -35,6 +35,8 @@ You can also skip to the next break or microbreak anytime from the menu, or rese
 The tray tooltip shows information about how much time is left till the next (micro)break, the number of microbreaks until the next break, or the time remaining in pause till breaks resume.
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-tray-3.png" height="90">
+
+Tray menu displays the time and type of next break as well.
 
 Microbreaks and breaks can be customized:
 - you can set the duration and interval of breaks
@@ -51,6 +53,7 @@ Microbreaks and breaks can be customized:
 - you can set the break window to be fullscreen
 - you can disable (micro)break ideas
 - you can disable pre-(micro)break notifications
+- you can disable (micro)break notification sounds
 - you can disable monitoring of system idle time for natural breaks (when user leaves and after return idle time is greater then break duration, *stretchly* will reset breaks)
 - you can disable the display of breaks on all of your monitors
 - you can change the default monochrome tray icon to a colorful version
@@ -59,6 +62,12 @@ Microbreaks and breaks can be customized:
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website-3.png" height="340">
 
 All settings can be reset to defaults.
+
+On firts run, stretchly will present you with Welcome window, where you can set your locale and read Tutorial.
+
+<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-welcome.png" height="340">
+
+You can view Tutorial again anytime from About window.
 
 ### Advanced settings
 All settings are saved in a JSON file. To learn more about how to find it, read [this](https://github.com/electron/electron/blob/master/docs/api/app.md#appgetpathname) or use `Ctrl/Cmd + d` shortcut in About window.
@@ -142,7 +151,7 @@ One can use `Ctrl/Cmd + d` shortcut in About window to show debug information:
 - [x] information about when will be the next break
 - [x] create keyboard shortcuts
 - [ ] color-picker for themes
-- [ ] some kind of silent mode (see #44)
+- [x] some kind of silent mode (see #44 and #327)
 - [ ] history/timeline of breaks
 - [x] localization support (l12n, gettetxt via Crowdin, Weblate or so)
 
@@ -177,6 +186,11 @@ One can use `Ctrl/Cmd + d` shortcut in About window to show debug information:
 - Alina Leuca, @alinaleuca
 - Sabine van der Eijk, @Sabin_E
 - JavaScript Joe, [@jsjoeio](https://github.com/jsjoeio)
+- Ismail Demirbilek, [@dbtek](https://github.com/dbtek)
+- Giacomo Rossetto, [@jackymancs4](https://github.com/jackymancs4)
+- Hum4n01d, [@hum4n01d](https://github.com/hum4n01d)
+- Ary Borenszweig, [@asterite](https://github.com/asterite)
+- Jonatan Nyberg, @jony0008
 
 ### Humans and Tools
  - https://github.com/typefoo/node-icns
@@ -194,6 +208,9 @@ Sounds used in this application are listed [here](http://freesound.org/people/ho
 - `wind chime` by [GnoteSoundz](http://freesound.org/people/GnoteSoundz/), available under the [Creative Commons 0 License](http://creativecommons.org/publicdomain/zero/1.0/).
 - `tic toc` by [magundah14](http://freesound.org/people/magundah14/), available under the [Creative Commons 0 License](http://creativecommons.org/publicdomain/zero/1.0/).
 - `silence` by [parcodeisuoni](http://freesound.org/people/parcodeisuoni/), available under the [Attribution License](http://creativecommons.org/licenses/by/3.0/).
+
+#### Fonts credits
+This app uses [Lato](https://www.latofonts.com) fonts under the OFL license. See OFL.txt file.  
 
 ## License
 See LICENSE file.
